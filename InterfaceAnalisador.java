@@ -165,7 +165,6 @@ public class InterfaceAnalisador {
 					tamanho = expr.length();
 					AnalisadorLexico lexical = new AnalisadorLexico(new StringReader(expr));	
                     lexical.yylex();
-                    //textLeitura.setText(lexical.tokens);
 					contar = lexical.contadorToken;
 					System.out.println(contar);
 					for(int i=0; i <= contar; i++){
