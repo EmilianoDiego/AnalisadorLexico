@@ -1,14 +1,15 @@
-
 package Analisador;
 
+// See https://github.com/jflex-de/jflex/issues/222
 @SuppressWarnings("FallThrough")
 class AnalisadorLexico {
-  public String tokens = "";
-  public String[] tokensLexema = new String[10000];
-  public String tokensDescricao = "";
-  public int contadorToken = 0;
-  public int i= 1;
-  public int contador =0;
+
+    public String tokens = "";
+    public String[] tokensLexema = new String[10000];
+    public String tokensDescricao = "";
+    public int contadorToken = 0;
+    public int i= 1;
+    public int contador =0; 
 
   /** This character denotes the end of file. */
   public static final int YYEOF = -1;
@@ -63,11 +64,15 @@ class AnalisadorLexico {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\11\0\2\1\2\2\1\1\22\0\1\1\12\0\1\3"+
-    "\4\0\1\4\11\5\7\0\32\6\4\0\1\6\1\0"+
-    "\4\6\1\7\1\10\1\6\1\11\1\12\4\6\1\13"+
-    "\5\6\1\14\6\6\1\0\1\15\10\0\1\2\u01a2\0"+
-    "\2\2\326\0\u0100\2";
+    "\11\0\2\1\2\2\1\1\22\0\1\1\1\3\4\0"+
+    "\1\4\1\5\2\6\1\7\1\10\1\6\1\11\1\6"+
+    "\1\12\1\13\11\14\1\0\1\6\1\15\1\16\1\15"+
+    "\1\0\1\5\32\17\1\6\1\0\1\6\1\0\1\17"+
+    "\1\0\1\20\1\21\1\22\1\23\1\24\1\25\1\26"+
+    "\1\27\1\30\1\17\1\31\1\32\1\33\1\34\1\35"+
+    "\1\36\1\17\1\37\1\40\1\41\1\42\1\43\1\44"+
+    "\1\45\1\46\1\47\1\6\1\50\1\6\7\0\1\2"+
+    "\u01a2\0\2\2\326\0\u0100\2";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[1024];
@@ -94,11 +99,13 @@ class AnalisadorLexico {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\3\2\4\3\5\1\2\1\6"+
-    "\2\5\1\7";
+    "\1\0\1\1\1\2\2\3\1\4\1\5\1\6\1\7"+
+    "\1\10\1\11\2\12\1\13\1\14\20\15\1\2\1\16"+
+    "\1\13\1\17\10\15\1\20\7\15\1\20\40\15\1\20"+
+    "\52\15\1\20\7\15\1\20\20\15";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[14];
+    int [] result = new int[152];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -123,11 +130,28 @@ class AnalisadorLexico {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\16\0\16\0\16\0\16\0\34\0\52\0\70"+
-    "\0\106\0\52\0\52\0\124\0\142\0\52";
+    "\0\0\0\51\0\51\0\122\0\51\0\51\0\51\0\51"+
+    "\0\51\0\51\0\173\0\51\0\244\0\315\0\366\0\u011f"+
+    "\0\u0148\0\u0171\0\u019a\0\u01c3\0\u01ec\0\u0215\0\u023e\0\u0267"+
+    "\0\u0290\0\u02b9\0\u02e2\0\u030b\0\u0334\0\u035d\0\u0386\0\u011f"+
+    "\0\51\0\51\0\51\0\u03af\0\u03d8\0\u0401\0\u042a\0\u0453"+
+    "\0\u047c\0\u04a5\0\u04ce\0\u04f7\0\u0520\0\u0549\0\u0572\0\u059b"+
+    "\0\u05c4\0\u05ed\0\u0616\0\u011f\0\u063f\0\u0668\0\u0691\0\u06ba"+
+    "\0\u06e3\0\u070c\0\u0735\0\u075e\0\u0787\0\u07b0\0\u07d9\0\u0802"+
+    "\0\u082b\0\u0854\0\u087d\0\u08a6\0\u08cf\0\u08f8\0\u0921\0\u094a"+
+    "\0\u0973\0\u099c\0\u09c5\0\u09ee\0\u0a17\0\u0a40\0\u0a69\0\u0a92"+
+    "\0\u0abb\0\u0ae4\0\u0b0d\0\u0b36\0\u0b5f\0\u0b88\0\u0bb1\0\u0bda"+
+    "\0\u0c03\0\u0c2c\0\u0c55\0\u0c7e\0\u0ca7\0\u0cd0\0\u0cf9\0\u0d22"+
+    "\0\u0d4b\0\u0d74\0\u0d9d\0\u0dc6\0\u0def\0\u0e18\0\u0e41\0\u0e6a"+
+    "\0\u0e93\0\u0ebc\0\u0ee5\0\u0f0e\0\u0f37\0\u0f60\0\u0f89\0\u0fb2"+
+    "\0\u0fdb\0\u1004\0\u102d\0\u1056\0\u107f\0\u10a8\0\u10d1\0\u10fa"+
+    "\0\u1123\0\u114c\0\u1175\0\u119e\0\u11c7\0\u11f0\0\u1219\0\u1242"+
+    "\0\u126b\0\u1294\0\u12bd\0\u12e6\0\u130f\0\u1338\0\u1361\0\u0d74"+
+    "\0\u138a\0\u13b3\0\u13dc\0\u1405\0\u142e\0\u1457\0\u1480\0\u14a9"+
+    "\0\u14d2\0\u14fb\0\u1524\0\u154d\0\u1576\0\u159f\0\u15c8\0\u15f1";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[14];
+    int [] result = new int[152];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -150,13 +174,120 @@ class AnalisadorLexico {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\0\1\4\1\5\1\6\4\7\1\10"+
-    "\1\7\1\11\1\12\22\0\2\6\14\0\12\7\4\0"+
-    "\4\7\1\13\5\7\4\0\5\7\1\14\4\7\4\0"+
-    "\3\7\1\15\6\7\4\0\7\7\1\16\2\7";
+    "\1\2\1\3\1\0\1\4\1\5\1\6\1\7\1\10"+
+    "\1\11\1\12\1\13\1\14\1\15\1\16\1\17\2\20"+
+    "\1\21\1\22\1\23\1\24\1\25\1\26\1\20\1\27"+
+    "\1\20\1\30\1\20\1\31\1\20\1\32\1\33\1\34"+
+    "\1\35\1\20\1\36\1\37\3\20\1\40\67\0\1\5"+
+    "\44\0\1\41\51\0\2\15\52\0\1\42\50\0\1\43"+
+    "\45\0\2\20\2\0\32\20\13\0\2\20\2\0\16\20"+
+    "\1\44\1\20\1\45\6\20\1\46\2\20\13\0\2\20"+
+    "\2\0\1\20\1\47\6\20\1\50\2\20\1\51\2\20"+
+    "\1\52\13\20\13\0\2\20\2\0\5\20\1\53\10\20"+
+    "\1\54\13\20\13\0\2\20\2\0\13\20\1\55\1\20"+
+    "\1\56\10\20\1\57\3\20\13\0\2\20\2\0\11\20"+
+    "\1\60\1\20\1\61\2\20\1\62\13\20\13\0\2\20"+
+    "\2\0\16\20\1\63\13\20\13\0\2\20\2\0\6\20"+
+    "\1\64\5\20\1\65\1\66\14\20\13\0\2\20\2\0"+
+    "\16\20\1\67\13\20\13\0\2\20\2\0\1\20\1\70"+
+    "\3\20\1\71\24\20\13\0\2\20\2\0\1\20\1\72"+
+    "\16\20\1\73\2\20\1\74\6\20\13\0\2\20\2\0"+
+    "\5\20\1\75\24\20\13\0\2\20\2\0\10\20\1\76"+
+    "\11\20\1\77\1\100\1\20\1\101\1\20\1\102\2\20"+
+    "\13\0\2\20\2\0\10\20\1\103\7\20\1\104\11\20"+
+    "\13\0\2\20\2\0\16\20\1\105\13\20\13\0\2\20"+
+    "\2\0\10\20\1\106\21\20\13\0\2\20\2\0\16\20"+
+    "\1\107\13\20\13\0\2\20\2\0\5\20\1\110\24\20"+
+    "\13\0\2\20\2\0\22\20\1\111\7\20\13\0\2\20"+
+    "\2\0\21\20\1\111\1\112\7\20\13\0\2\20\2\0"+
+    "\1\20\1\62\30\20\13\0\2\20\2\0\1\20\1\113"+
+    "\30\20\13\0\2\20\2\0\15\20\1\114\14\20\13\0"+
+    "\2\20\2\0\6\20\1\115\23\20\13\0\2\20\2\0"+
+    "\23\20\1\116\6\20\13\0\2\20\2\0\21\20\1\111"+
+    "\10\20\13\0\2\20\2\0\23\20\1\117\6\20\13\0"+
+    "\2\20\2\0\22\20\1\120\7\20\13\0\2\20\2\0"+
+    "\15\20\1\121\14\20\13\0\2\20\2\0\16\20\1\122"+
+    "\13\20\13\0\2\20\2\0\20\20\1\64\11\20\13\0"+
+    "\2\20\2\0\22\20\1\123\7\20\13\0\2\20\2\0"+
+    "\17\20\1\124\12\20\13\0\2\20\2\0\22\20\1\125"+
+    "\7\20\13\0\2\20\2\0\15\20\1\126\14\20\13\0"+
+    "\2\20\2\0\22\20\1\127\7\20\13\0\2\20\2\0"+
+    "\25\20\1\64\4\20\13\0\2\20\2\0\3\20\1\130"+
+    "\26\20\13\0\2\20\2\0\11\20\1\131\4\20\1\132"+
+    "\13\20\13\0\2\20\2\0\2\20\1\133\27\20\13\0"+
+    "\2\20\2\0\22\20\1\134\7\20\13\0\2\20\2\0"+
+    "\16\20\1\135\13\20\13\0\2\20\2\0\1\20\1\136"+
+    "\30\20\13\0\2\20\2\0\17\20\1\137\12\20\13\0"+
+    "\2\20\2\0\11\20\1\140\20\20\13\0\2\20\2\0"+
+    "\15\20\1\141\14\20\13\0\2\20\2\0\11\20\1\142"+
+    "\6\20\1\143\11\20\13\0\2\20\2\0\1\20\1\144"+
+    "\25\20\1\64\2\20\13\0\2\20\2\0\11\20\1\145"+
+    "\1\20\1\146\16\20\13\0\2\20\2\0\11\20\1\147"+
+    "\20\20\13\0\2\20\2\0\13\20\1\150\16\20\13\0"+
+    "\2\20\2\0\1\20\1\151\30\20\13\0\2\20\2\0"+
+    "\5\20\1\64\24\20\13\0\2\20\2\0\3\20\1\152"+
+    "\26\20\13\0\2\20\2\0\21\20\1\142\10\20\13\0"+
+    "\2\20\2\0\21\20\1\153\1\154\7\20\13\0\2\20"+
+    "\2\0\1\20\1\155\30\20\13\0\2\20\2\0\2\20"+
+    "\1\147\27\20\13\0\2\20\2\0\14\20\1\64\15\20"+
+    "\13\0\2\20\2\0\5\20\1\156\24\20\13\0\2\20"+
+    "\2\0\1\20\1\157\30\20\13\0\2\20\2\0\1\20"+
+    "\1\153\30\20\13\0\2\20\2\0\16\20\1\64\13\20"+
+    "\13\0\2\20\2\0\13\20\1\160\2\20\1\135\13\20"+
+    "\13\0\2\20\2\0\5\20\1\161\24\20\13\0\2\20"+
+    "\2\0\7\20\1\64\22\20\13\0\2\20\2\0\11\20"+
+    "\1\162\20\20\13\0\2\20\2\0\12\20\1\163\17\20"+
+    "\13\0\2\20\2\0\24\20\1\164\5\20\13\0\2\20"+
+    "\2\0\22\20\1\165\7\20\13\0\2\20\2\0\13\20"+
+    "\1\166\16\20\13\0\2\20\2\0\23\20\1\167\6\20"+
+    "\13\0\2\20\2\0\20\20\1\153\11\20\13\0\2\20"+
+    "\2\0\22\20\1\166\7\20\13\0\2\20\2\0\5\20"+
+    "\1\62\24\20\13\0\2\20\2\0\22\20\1\112\7\20"+
+    "\13\0\2\20\2\0\3\20\1\170\26\20\13\0\2\20"+
+    "\2\0\21\20\1\64\10\20\13\0\2\20\2\0\16\20"+
+    "\1\171\13\20\13\0\2\20\2\0\15\20\1\172\14\20"+
+    "\13\0\2\20\2\0\4\20\1\64\25\20\13\0\2\20"+
+    "\2\0\1\20\1\173\30\20\13\0\2\20\2\0\13\20"+
+    "\1\111\16\20\13\0\2\20\2\0\5\20\1\174\24\20"+
+    "\13\0\2\20\2\0\12\20\1\64\17\20\13\0\2\20"+
+    "\2\0\10\20\1\64\21\20\13\0\2\20\2\0\22\20"+
+    "\1\64\7\20\13\0\2\20\2\0\11\20\1\175\20\20"+
+    "\13\0\2\20\2\0\23\20\1\176\6\20\13\0\2\20"+
+    "\2\0\15\20\1\177\14\20\13\0\2\20\2\0\13\20"+
+    "\1\200\16\20\13\0\2\20\2\0\5\20\1\201\24\20"+
+    "\13\0\2\20\2\0\20\20\1\202\11\20\13\0\2\20"+
+    "\2\0\24\20\1\111\5\20\13\0\2\20\2\0\1\20"+
+    "\1\203\30\20\13\0\2\20\2\0\1\20\1\46\30\20"+
+    "\13\0\2\20\2\0\5\20\1\204\24\20\13\0\2\20"+
+    "\2\0\11\20\1\205\20\20\13\0\2\20\2\0\20\20"+
+    "\1\206\11\20\13\0\2\20\2\0\10\20\1\207\21\20"+
+    "\13\0\2\20\2\0\25\20\1\210\4\20\13\0\2\20"+
+    "\2\0\21\20\1\211\10\20\13\0\2\20\2\0\22\20"+
+    "\1\106\7\20\13\0\2\20\2\0\1\20\1\206\30\20"+
+    "\13\0\2\20\2\0\15\20\1\212\14\20\13\0\2\20"+
+    "\2\0\13\20\1\153\16\20\13\0\2\20\2\0\4\20"+
+    "\1\142\25\20\13\0\2\20\2\0\13\20\1\213\16\20"+
+    "\13\0\2\20\2\0\14\20\1\214\15\20\13\0\2\20"+
+    "\2\0\6\20\1\215\23\20\13\0\2\20\2\0\7\20"+
+    "\1\111\22\20\13\0\2\20\2\0\3\20\1\216\26\20"+
+    "\13\0\2\20\2\0\3\20\1\64\26\20\13\0\2\20"+
+    "\2\0\15\20\1\64\14\20\13\0\2\20\2\0\20\20"+
+    "\1\217\11\20\13\0\2\20\2\0\11\20\1\220\20\20"+
+    "\13\0\2\20\2\0\23\20\1\111\6\20\13\0\2\20"+
+    "\2\0\27\20\1\64\2\20\13\0\2\20\2\0\5\20"+
+    "\1\221\24\20\13\0\2\20\2\0\1\20\1\222\30\20"+
+    "\13\0\2\20\2\0\22\20\1\223\7\20\13\0\2\20"+
+    "\2\0\16\20\1\224\13\20\13\0\2\20\2\0\5\20"+
+    "\1\225\24\20\13\0\2\20\2\0\15\20\1\226\14\20"+
+    "\13\0\2\20\2\0\3\20\1\111\26\20\13\0\2\20"+
+    "\2\0\5\20\1\145\24\20\13\0\2\20\2\0\15\20"+
+    "\1\227\14\20\13\0\2\20\2\0\15\20\1\153\14\20"+
+    "\13\0\2\20\2\0\22\20\1\142\7\20\13\0\2\20"+
+    "\2\0\11\20\1\230\20\20\13\0\2\20\2\0\30\20"+
+    "\1\223\1\20";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[112];
+    int [] result = new int[5658];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -199,10 +330,11 @@ class AnalisadorLexico {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\4\11\11\1";
+    "\1\0\2\11\1\1\6\11\1\1\1\11\24\1\3\11"+
+    "\165\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[14];
+    int [] result = new int[152];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -283,16 +415,15 @@ class AnalisadorLexico {
 
   /* user code: */
 
-private int imprimir(String descricao, String lexema,int contadorTokens) {
-   
-    System.out.println("analisador: "+contadorTokens);
+private int imprimir(String descricao, String lexema) {
     tokens +=  lexema + "  -- " + descricao+ "\n";
-    tokensLexema[contadorTokens] = lexema + "  -- " + descricao+ "\n";
+    tokensLexema[contadorToken] ="          "+ lexema + "  -- " + descricao+ "\n";
     tokensDescricao += "  --"+ descricao + "\n";
     contador += lexema.length();
     i = tokens.length();
     return i;
 }
+
 
 
   /**
@@ -561,9 +692,13 @@ private int imprimir(String descricao, String lexema,int contadorTokens) {
     int [] zzRowMapL = ZZ_ROWMAP;
     int [] zzAttrL = ZZ_ATTRIBUTE;
 
+
+
+
     InterfaceAnalisador gui = new InterfaceAnalisador();
     while (i >0) {
       i = gui.contador(contador);
+
 
       zzMarkedPosL = zzMarkedPos;
 
@@ -637,52 +772,90 @@ private int imprimir(String descricao, String lexema,int contadorTokens) {
             { throw new RuntimeException("Caractere inválido " + yytext());
             }
             // fall through
-          case 8: break;
+          case 17: break;
           case 2:
-            {  imprimir("  Espaço em branco", yytext(),contadorToken++);
-
+            { imprimir("   Espaço em branco", yytext());
             }
             // fall through
-          case 9: break;
+          case 18: break;
           case 3:
-            { imprimir("  Operador de soma", yytext(),contadorToken++);
-
+            { imprimir("   Operador logico", yytext());
             }
             // fall through
-          case 10: break;
+          case 19: break;
           case 4:
-            { imprimir("  Número Inteiro", yytext(),contadorToken++);
-
+            { imprimir("   Operador especial", yytext());
             }
-            
-          case 11: break;
+            // fall through
+          case 20: break;
           case 5:
-            { imprimir("  Identificador", yytext(),contadorToken++);
-
+            { imprimir("   Operador delimitador", yytext());
             }
             // fall through
-          case 12: break;
+          case 21: break;
           case 6:
-            { imprimir("  Palavra reservada if", yytext(),contadorToken++);
-
+            { imprimir("   Operador de multiplicacao", yytext());
             }
             // fall through
-          case 13: break;
+          case 22: break;
           case 7:
-            { imprimir("  Palavra reservada then", yytext(),contadorToken++);
-
+            { imprimir("   Operador de soma", yytext());
             }
             // fall through
-          case 14: break;
+          case 23: break;
+          case 8:
+            { imprimir("   Operador de subtracao", yytext());
+            }
+            // fall through
+          case 24: break;
+          case 9:
+            { imprimir("   Operador de divisao", yytext());
+            }
+            // fall through
+          case 25: break;
+          case 10:
+            { imprimir("   Número Inteiro", yytext());
+            }
+            // fall through
+          case 26: break;
+          case 11:
+            { imprimir("   Operador relacionais", yytext());
+            }
+            // fall through
+          case 27: break;
+          case 12:
+            { imprimir("   Operador atribuicao", yytext());
+            }
+            // fall through
+          case 28: break;
+          case 13:
+            { imprimir("   Identificador", yytext());
+            }
+            // fall through
+          case 29: break;
+          case 14:
+            { imprimir("   Operador comentario", yytext());
+            }
+            // fall through
+          case 30: break;
+          case 15:
+            { imprimir("   Operador comparacao", yytext());
+            }
+            // fall through
+          case 31: break;
+          case 16:
+            { imprimir("   Palavra reservada", yytext());
+            }
+            // fall through
+          case 32: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }
       }
-      //contadorToken ++;
+
+      contadorToken ++;
     }
   }
 
 
 }
-
-
