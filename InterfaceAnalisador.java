@@ -8,7 +8,8 @@ package Analisador;
     import javax.swing.JFrame;
     import javax.swing.JLabel;
     import javax.swing.DefaultListModel;
-    import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
     import java.awt.event.ActionListener;
     import java.awt.event.ActionEvent;
     import javax.swing.JTextArea;
@@ -17,7 +18,6 @@ package Analisador;
     import javax.swing.JList;
     
     public class InterfaceAnalisador {
-    
         private JFrame frame;
         public String expr ="";
         public static String [] tokens = new String[10000];
@@ -78,32 +78,32 @@ package Analisador;
             //estrutura do jframe
             frame = new JFrame();
             frame.setTitle("ANALISADOR LEXICO");
-            frame.setBounds(100, 100, 740, 540);
+            frame.setBounds(130, 100, 740, 600);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.getContentPane().setLayout(null);
             frame.getContentPane().setBackground( new Color(128, 128, 128));
+            
             //estrutura do scrollpane da lista
             JScrollPane scrollPanelista = new JScrollPane();
-            scrollPanelista.setBounds(357, 32, 330, 380);
+            scrollPanelista.setBounds(380, 50, 300, 380);
             frame.getContentPane().add(scrollPanelista);
             //estrutura do scrollpane do texto
             JScrollPane scrollPanetext = new JScrollPane();
-            scrollPanetext.setBounds(30, 33, 296, 379);
+            scrollPanetext.setBounds(30, 50, 300, 380);
             frame.getContentPane().add(scrollPanetext);
             //estrutura do jlabel
             JLabel lblNome = new JLabel("CODE JAVA");
             lblNome.setBackground(new Color(0, 0, 0));
             lblNome.setFont(new Font("Tahoma", Font.BOLD, 13));
-            lblNome.setBounds(30, 11, 117, 22);
+            lblNome.setBounds(30, 30, 117, 22);
             frame.getContentPane().add(lblNome);
             //estrutura do jlabel
             JLabel lblToken = new JLabel("TOKEN JAVA");
             lblToken.setForeground(new Color(0, 0, 0));
             lblToken.setBackground(SystemColor.window);
             lblToken.setFont(new Font("Tahoma", Font.BOLD, 13));
-            lblToken.setBounds(359, 15, 78, 14);
+            lblToken.setBounds(380, 30, 117, 22);
             frame.getContentPane().add(lblToken);
-            
             //metodo para adicionar itens a lista
             DefaultListModel lista = new DefaultListModel<>();
             JList list = new JList(lista);
@@ -116,7 +116,7 @@ package Analisador;
             textArea.setForeground(new Color(0, 0, 0));
             textArea.setFont(new Font("Tahoma", Font.PLAIN, 14));
             textArea.setBackground(new Color(211, 211, 211));
-            textArea.setBounds(30, 34, 259, 277);
+           // textArea.setBounds(30, 34, 259, 277);
             scrollPanetext.setViewportView(textArea);
             String inicio = "public class Hello { \n " +
                 "public static void main(String[] args) { \n"+
@@ -128,8 +128,10 @@ package Analisador;
             JButton btnSair = new JButton("SAIR");
             btnSair.setBackground(new Color(128, 0, 0));
             btnSair.setForeground(new Color(0, 0, 0));
-            btnSair.setFont(new Font("Tahoma", Font.BOLD, 13));
-            btnSair.setBounds(570, 439, 89, 36);
+            btnSair.setFont(new Font("Tahoma", Font.BOLD, 10));
+            btnSair.setBounds(520, 480, 120, 52);
+            ImageIcon iconSair = new ImageIcon("AnalisadorLexico/icon/sair2.png");
+            btnSair.setIcon(iconSair);
             //EVENTO DE CLIQUE DO BOTAO
             btnSair.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent arg0) {
@@ -140,8 +142,10 @@ package Analisador;
             JButton btnClear = new JButton("CLEAR");
             btnClear.setForeground(new Color(0, 0, 0));
             btnClear.setBackground(new Color(240, 248, 255));
-            btnClear.setFont(new Font("Tahoma", Font.BOLD, 13));
-            btnClear.setBounds(303, 439, 89, 36);
+            btnClear.setFont(new Font("Tahoma", Font.BOLD, 10));
+            btnClear.setBounds(303, 480, 120, 52);
+            ImageIcon iconClear = new ImageIcon("AnalisadorLexico/icon/lixeiraClear.png");
+            btnClear.setIcon(iconClear);
             //EVENTO DE CLIQUE DO BOTAO
             btnClear.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent arg0) {
@@ -156,8 +160,10 @@ package Analisador;
             JButton btnAnalyse = new JButton("ANALYSE");
             btnAnalyse.setForeground(Color.BLACK);
             btnAnalyse.setBackground(new Color(0, 255, 0));
-            btnAnalyse.setFont(new Font("Tahoma", Font.BOLD, 13));
-            btnAnalyse.setBounds(58, 439, 89, 36);
+            btnAnalyse.setFont(new Font("Tahoma", Font.BOLD, 10));
+            btnAnalyse.setBounds(58, 480, 120, 52);
+            ImageIcon iconAnalise = new ImageIcon("AnalisadorLexico/icon/lupa2.png");
+            btnAnalyse.setIcon(iconAnalise);
             frame.getContentPane().add(btnAnalyse);
             //EVENTO DE CLIQUE DO BOTAO
             btnAnalyse.addActionListener(new ActionListener() {
